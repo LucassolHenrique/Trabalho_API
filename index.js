@@ -1,5 +1,6 @@
-const express = require('express');
-const app = express();
+// nomeclatura modificada de fornecedor_router para fornecedor_routes
+// const fornecedorRoutes = require('./src/routes/fornecedor_router');
+const fornecedorRoutes = require('./src/routes/fornecedor_routes');const app = express();
 const port = 3000;
 
 // Importar as rotas

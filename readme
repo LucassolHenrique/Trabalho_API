@@ -1,0 +1,55 @@
+<!-- Tema 4 - E-commerce
+Introdução
+Esse sistema consiste em ajudar uma loja virtual a gerenciar seus produtos, clientes, pedidos e
+pagamentos, oferecendo um controle centralizado das transações.
+Problema
+Atualmente, a loja alvo desse trabalho realiza o controle de pedidos e cadastro de clientes de
+forma manual ou em planilhas, o que gera erros frequentes, atrasos na atualização do estoque e
+dificuldades em rastrear histórico de compras.
+Objetivos
+O objetivo desse trabalho é realizar um sistema para loja virtual que permite o gerenciamento de
+produtos, clientes e pedidos, além de incluir funcionalidades básicas como controle de estoque e
+cálculo de valores de pedidos.
+Solução
+O objetivo é desenvolver uma API que auxilie no controle dos produtos e clientes, assim como o
+gerenciamento de pedidos e o controle de estoque. A seguir, separamos as funcionalidades que
+devem ser realizadas pelos desenvolvedores, separando algumas para cada desenvolvedor:
+Aluno 1: Carrinho de compras
+- CRUD de categoria: anota-se o nome da categoria e a descrição.
+- CRUD de produtos: anota-se nome, preço, descrição, categoria e estoque (quantidade de itens
+disponíveis).
+- Carrinho de compras: anota-se a data e hora de criação e o nome do cliente (String). No
+carrinho de compras, podemos adicionar ou remover itens de compras (produto e quantidade).
+RN: só é possível adicionar um item no carrinho se houver quantidade suficiente no estoque.
+- Cadastro e autenticação do usuário: para cada usuário da loja virtual, anota-se o nome
+completo, e e-mail e senha para realizar autenticação.
+Aluno 2: Cadastro de pedidos
+- CRUD de marca: relaciona-se o nome da marca e a url para o logo (String no formato de URL)
+- CRUD de produtos: anota-se nome, preço, categoria (String) e marca.
+- CRUD de Clientes: registra-se o nome do cliente, CPF, e-mail, telefone e endereço.
+- Cadastro de pedidos: cada pedido relaciona a data e hora do pedido, o cliente, os itens
+(produto e quantidade), o status, forma do pagamento e o valor total (calculado). RN: o valor total
+deve ser calculado automaticamente a partir dos produtos e quantidade. Além disso, o status
+inicia como pendente, e depois pode-se alterar (PATCH: status) para pago, cancelado ou
+finalizado.
+- Cadastro e autenticação do usuário: para cada usuário da loja virtual, anota-se o nome
+completo, e e-mail e senha para realizar autenticação.
+Aluno 3: Avaliação e Recomendação
+- CRUD de fornecedores: registra-se o nome da empresa, o CNPJ, o telefone e o e-mail do
+fornecedor.
+- CRUD de produtos: anota-se o nome, o preço, a marca (String), o fornecedor padrão e o
+estoque (quantidade de itens disponíveis).
+- Compra de produtos: numa compra do produto, registra-se a data e hora, o fornecedor e a lista
+de itens (produto e quantidade). RN: ao repor estoque, a quantidade disponível do produto deve
+ser atualizada. Além disso, um campo chamado "produtos diferentes” deve ser relacionado que
+calcule a quantidade de produtos diferentes do fornecedor padrão para o fornecedor relacionado.
+- Cadastro e autenticação do usuário: para cada usuário da loja virtual, anota-se o nome
+completo, e e-mail e senha para realizar autenticação. -->
+
+
+<!-- Diario técnico -->
+<!-- Data de inicio  -->
+<!-- Pontos que devo levar como base é o Aluno 3 -->
+
+<!-- estudos relacionados que foram feitos -->
+<!--  -->

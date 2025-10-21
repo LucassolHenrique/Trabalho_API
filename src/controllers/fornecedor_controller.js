@@ -1,3 +1,6 @@
+
+// const fornecedorService = require('../services/fornecedores_services');
+
 const fornecedorService = require('../services/fornecedor_service');
 
 async function listar(req, res) {
@@ -11,7 +14,7 @@ async function inserir(req, res, next) {
         const fornecedorInserido = await fornecedorService.inserir(fornecedor);
         res.status(201).json(fornecedorInserido);
     } catch (error) {
-        // Envia o erro para o middleware de tratamento de erros
+        // tratamento de erro.
         next(error); 
     }
 }
