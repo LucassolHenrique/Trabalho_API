@@ -1,3 +1,4 @@
+// src/repositories/produto_repository.js
 let listaProdutos = [];
 let autoIncrement = 1;
 
@@ -20,7 +21,6 @@ function findIndexById(id) {
     return listaProdutos.findIndex(p => p.id == id);
 }
 
-// O atualizar é crucial para o compra_service
 function atualizar(id, produtoAtualizado) {
     const index = findIndexById(id);
     if (index >= 0) {

@@ -1,21 +1,20 @@
-
-// const fornecedorService = require('../services/fornecedores_services');
-
 const fornecedorService = require('../services/fornecedor_service');
 
-async function listar(req, res) {
-    const lista = await fornecedorService.listar();
-    res.json(lista);
+async function listar(req, res, next) {
+    try {
+        const fornecedores = await fornecedorService.listar();
+        res.json(fornecedores);
+    } catch (error) {
+        next(error); // Passa o erro para o middleware de erro no index.js
+    }
 }
 
 async function inserir(req, res, next) {
     try {
-        const fornecedor = req.body;
-        const fornecedorInserido = await fornecedorService.inserir(fornecedor);
-        res.status(201).json(fornecedorInserido);
+        const fornecedor = await fornecedorService.inserir(req.body);
+        res.status(201).json(fornecedor);
     } catch (error) {
-        // tratamento de erro.
-        next(error); 
+        next(error);
     }
 }
 
@@ -32,9 +31,8 @@ async function buscarPorId(req, res, next) {
 async function atualizar(req, res, next) {
     try {
         const id = req.params.id;
-        const fornecedor = req.body;
-        const fornecedorAtualizado = await fornecedorService.atualizar(id, fornecedor);
-        res.json(fornecedorAtualizado);
+        const fornecedor = await fornecedorService.atualizar(id, req.body);
+        res.json(fornecedor);
     } catch (error) {
         next(error);
     }
@@ -43,8 +41,8 @@ async function atualizar(req, res, next) {
 async function deletar(req, res, next) {
     try {
         const id = req.params.id;
-        const fornecedorDeletado = await fornecedorService.deletar(id);
-        res.json(fornecedorDeletado);
+        const fornecedor = await fornecedorService.deletar(id);
+        res.json({ msg: "Fornecedor deletado com sucesso", fornecedor });
     } catch (error) {
         next(error);
     }
@@ -56,4 +54,4 @@ module.exports = {
     buscarPorId,
     atualizar,
     deletar
-}
+};
