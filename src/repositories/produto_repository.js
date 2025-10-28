@@ -1,4 +1,3 @@
-// src/repositories/produto_repository.js
 let listaProdutos = [];
 let autoIncrement = 1;
 

@@ -1,4 +1,3 @@
-// src/repositories/usuario_repository.js
 let listaUsuarios = [];
 let autoIncrement = 1;
 

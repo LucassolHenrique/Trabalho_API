@@ -7,12 +7,10 @@ async function listar() {
 }
 
 async function inserir(compra) {
-    // 1. Validação básica
     if (!compra || !compra.fornecedorId || !compra.itens || compra.itens.length === 0) {
         throw { id: 400, msg: "Dados da compra incompletos" };
     }
 
-    // 2. Validar se o fornecedor da compra existe
     const fornecedorCompra = await fornecedorRepository.buscarPorId(compra.fornecedorId);
     if (!fornecedorCompra) {
         throw { id: 404, msg: "Fornecedor da compra não encontrado" };
@@ -20,10 +18,7 @@ async function inserir(compra) {
 
     let produtosDiferentesCount = 0;
 
-    // 3. Processar cada item da compra (RN 1 e RN 2)
-    // Usamos Promise.all para processar todos os itens em paralelo (Aula 05/06)
     const promisesItens = compra.itens.map(async (item) => {
-        // Busca o produto no nosso estoque
         const produto = await produtoRepository.buscarPorId(item.produtoId);
         if (!produto) {
             throw { id: 404, msg: `Produto com ID ${item.produtoId} não encontrado` };
@@ -40,7 +35,6 @@ async function inserir(compra) {
         }
     });
 
-    // Espera todas as atualizações de estoque e verificações terminarem
     await Promise.all(promisesItens);
 
     const novaCompra = {

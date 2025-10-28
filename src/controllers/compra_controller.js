@@ -1,4 +1,3 @@
-// src/controllers/compra_controller.js
 const compraService = require('../services/compra_service');
 
 async function listar(req, res, next) {

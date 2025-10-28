@@ -1,4 +1,3 @@
-// src/controllers/produto_controller.js
 const produtoService = require('../services/produtos_service');
 
 async function listar(req, res, next) {
