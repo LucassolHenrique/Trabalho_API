@@ -43,15 +43,14 @@ async function inserir(compra) {
     // Espera todas as atualizações de estoque e verificações terminarem
     await Promise.all(promisesItens);
 
-    // 4. Montar o objeto final da Compra
     const novaCompra = {
         dataHora: new Date(),
         fornecedorId: compra.fornecedorId,
         itens: compra.itens,
-        produtosDiferentes: produtosDiferentesCount // RN 2 calculada
+        produtosDiferentes: produtosDiferentesCount
     };
 
-    // 5. Salvar a compra
+    // Salvar a compra
     return await compraRepository.inserir(novaCompra);
 }
 

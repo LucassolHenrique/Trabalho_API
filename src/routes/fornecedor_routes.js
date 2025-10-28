@@ -1,4 +1,3 @@
-// src/routes/fornecedor_routes.js
 const express = require('express');
 const router = express.Router();
 const fornecedorController = require('../controllers/fornecedor_controller');
